@@ -94,3 +94,26 @@ Solution3().merge(&input, 3, [2,5,6], 3)
 
 var input2 = [1]
 Solution3().merge(&input2, 1, [], 0)
+
+/*
+ https://leetcode.com/problems/move-zeroes/
+ */
+
+class Solution4 {
+    func moveZeroes(_ nums: inout [Int]) {
+        var j = 0
+        for i in 0..<nums.count{
+            if nums[i] != 0{
+                nums[j] = nums[i]
+                j = j+1
+            }
+        }
+       for k in j..<nums.count{
+           nums[k] = 0
+       }
+    }
+}
+
+//Sample Test
+var input3 = [0,1,0,3,12]
+Solution4().moveZeroes(&input3)
